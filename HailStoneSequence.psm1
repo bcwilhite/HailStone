@@ -73,4 +73,4 @@ function Get-HailStoneSequence
     }
 }
 
-Export-ModuleMember -Function '*-HailStoneSequence'
+Export-ModuleMember -Function 'Get-HailStoneSequence'
