@@ -1,10 +1,11 @@
 function Invoke-EvenNumberRoutine
 {
     [CmdletBinding()]
+    [OutputType([Int64])]
     param
     (
         [Parameter(Mandatory = $true)]
-        [Int32]
+        [Int64]
         $Number
     )
 
@@ -14,10 +15,11 @@ function Invoke-EvenNumberRoutine
 function Invoke-OddNumberRoutine
 {
     [CmdletBinding()]
+    [OutputType([Int64])]
     param
     (
         [Parameter(Mandatory = $true)]
-        [Int32]
+        [Int64]
         $Number
     )
 
@@ -42,22 +44,29 @@ function Get-HailStoneSequence
     param
     (
         [Parameter(Mandatory = $true)]
-        [Int32]
+        [Int64]
         $StartingNumber
     )
 
     $number = $StartingNumber
     while ($number -ne 1)
     {
-        switch ($number % 2)
+        try
         {
-            0 {
-                $number = Invoke-EvenNumberRoutine -Number $number
-            }
+            switch ($number % 2)
+            {
+                0 {
+                    $number = Invoke-EvenNumberRoutine -Number $number
+                }
 
-            1 {
-                $number = Invoke-OddNumberRoutine -Number $number
+                1 {
+                    $number = Invoke-OddNumberRoutine -Number $number
+                }
             }
+        }
+        catch
+        {
+            throw $_
         }
 
         $number
