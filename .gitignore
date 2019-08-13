@@ -1,0 +1,9 @@
+# Cloned modules
+DSCResource.Tests
+
+# Editors
+.vscode/
+.vs/
+
+# local preference scripts/utilities
+.local/
