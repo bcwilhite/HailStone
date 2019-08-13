@@ -1,2 +1,2 @@
 # HailStoneSequence
-PowerShell Module that returns the HailStone Number Sequence, or Collatz conjecture.
+Returns the HailStone Number Sequence, or Collatz conjecture.  Wikipedia definition: Start with any positive integer n. Then each term is obtained from the previous term as follows: if the previous term is even, the next term is one half the previous term. If the previous term is odd, the next term is 3 times the previous term plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.
